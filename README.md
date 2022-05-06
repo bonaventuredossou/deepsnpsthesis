@@ -11,8 +11,10 @@ System overview
 ![](https://github.com/bonaventuredossou/deepsnpsthesis/blob/main/pictures/DiagramDeepSNPs.jpg)
 
 
+
 Model Architecture
-    ![](https://github.com/bonaventuredossou/deepsnpsthesis/blob/main/pictures/model_architecture.png)
+![](https://github.com/bonaventuredossou/deepsnpsthesis/blob/main/pictures/model_architecture.png)
+
 
 
 [Model's weights](https://drive.google.com/file/d/1-ENOpruomCh9kE9nPuBtw-gxgwp-ayFh/view?usp=sharing)
@@ -24,21 +26,26 @@ Model Architecture
     - AUC ROC: 0.8733
   
 
+
 Classification Report
-  ![](https://github.com/bonaventuredossou/deepsnpsthesis/blob/main/pictures/classreport.png)
+![](https://github.com/bonaventuredossou/deepsnpsthesis/blob/main/pictures/classreport.png)
+
 
 
 Confusion Matrix
-  ![](https://github.com/bonaventuredossou/deepsnpsthesis/blob/main/pictures/conf_matrix_best.png)
+![](https://github.com/bonaventuredossou/deepsnpsthesis/blob/main/pictures/conf_matrix_best.png)
+
 
 
 AUC ROC Curve
-  ![](https://github.com/bonaventuredossou/deepsnpsthesis/blob/main/pictures/auc.png)
+![](https://github.com/bonaventuredossou/deepsnpsthesis/blob/main/pictures/auc.png)
   
+
 
 Features Importance with correct predictions
-  ![](https://github.com/bonaventuredossou/deepsnpsthesis/blob/main/pictures/features_importance_correct_predictions.png)
+![](https://github.com/bonaventuredossou/deepsnpsthesis/blob/main/pictures/features_importance_correct_predictions.png)
   
 
+
 Features Importance with wrong predictions
-  ![](https://github.com/bonaventuredossou/deepsnpsthesis/blob/main/pictures/features_importance_wrong_predictions.png)
+![](https://github.com/bonaventuredossou/deepsnpsthesis/blob/main/pictures/features_importance_wrong_predictions.png)
