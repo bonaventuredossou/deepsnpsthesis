@@ -13,6 +13,7 @@ System overview
 
 
 Model Architecture
+
 ![](https://github.com/bonaventuredossou/deepsnpsthesis/blob/main/pictures/model_architecture.png)
 
 
