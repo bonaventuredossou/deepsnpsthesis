@@ -25,7 +25,8 @@ dataset_ = dataset_.drop_duplicates(subset=["SNPS"], inplace=False)
 dataset_['SNPS'] = dataset_['SNPS'].apply(reformat_snps)
 dataset_ = dataset_[dataset_["SNPS"] != "empty"]
 
-def draw_graph(key, dataset, ax, index, threshold, style):
+
+def draw_graph(key, dataset, ax, index, style, mode='empty'):
     dataset = dataset[dataset.CONTEXT == key]
     snp_cancer_info = dataset.groupby(by="DISEASE/TRAIT")
     dict_ = {}
@@ -45,7 +46,7 @@ def draw_graph(key, dataset, ax, index, threshold, style):
                 name = 'cancer_{}'.format(ind)
                 dict_[name] = list(set(snp_info["SNPS"].tolist()))
 
-        if style == "no_cancer":
+        if style == "non_cancer":
             if snp_info["is_cancer"].unique().tolist()[0] == 0:
                 name = 'not_cancer_{}'.format(ind)
                 dict_[name] = list(set(snp_info["SNPS"].tolist()))
@@ -57,8 +58,12 @@ def draw_graph(key, dataset, ax, index, threshold, style):
         for ind1, (key1, val1) in enumerate(dict_.items()):
             if ind != ind1:
                 # select diseases which have no SNPs in common
-                if len(set(val).intersection(set(val1))) == 0:
-                    edges.append((key, key1))
+                if mode == 'empty':
+                    if len(set(val).intersection(set(val1))) == 0:
+                        edges.append((key, key1))
+                else:
+                    if len(set(val).intersection(set(val1))) > 0:
+                        edges.append((key, key1))
 
     edges = list(set(edges))
     g.add_edges_from(edges)
@@ -86,19 +91,32 @@ if randomize:
 styles = ["cancer_non_cancer", "cancer", "non_cancer"]
 styles_dict = {"cancer_non_cancer": "Cancer/Non-cancer Interactions Graph", "cancer": "Cancer Interactions Graph",
                "non_cancer": "Non-cancer Interactions Graph"}
+
+mode = 'not_empty'
 for style_ in styles:
     for i in range(1, 10):
         subax = plt.subplot(330 + i)
-        draw_graph(keys[i - 1], dataset_, subax, i, 0, style_)
+        draw_graph(keys[i - 1], dataset_, subax, i, style_, mode=mode)
     # https://networkx.org/documentation/stable/tutorial.html
     red_patch = mpatches.Patch(color='red', label='cancer disease')
     violet_patch = mpatches.Patch(color='violet', label='no-cancer disease')
-    plt.legend(handles=[red_patch, violet_patch], prop={'size': 7})
+    if style_ == "cancer":
+        plt.legend(handles=[red_patch], prop={'size': 7})
+    if style_ == "non_cancer":
+        plt.legend(handles=[violet_patch], prop={'size': 7})
+    if style_ == "cancer_non_cancer":
+        plt.legend(handles=[red_patch, violet_patch], prop={'size': 7})
     fig = plt.gcf()
     if randomize:
         fig.suptitle("randomized_{}".format(styles_dict[style_]), fontsize=14)
-        plt.savefig("pictures/random_{}.png".format(style_))
+        if mode == 'empty':
+            plt.savefig("pictures/random_{}.png".format(style_))
+        else:
+            plt.savefig("pictures/random_{}_{}.png".format(style_, mode))
     else:
         fig.suptitle("{}".format(styles_dict[style_]), fontsize=14)
-        plt.savefig("pictures/{}.png".format(style_))
+        if mode == 'empty':
+            plt.savefig("pictures/{}.png".format(style_))
+        else:
+            plt.savefig("pictures/{}_{}.png".format(style_, mode))
     plt.show()
