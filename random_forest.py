@@ -1,10 +1,10 @@
+# Bonaventure Dossou - MSc Thesis (May 2022)
+# Random Forest and Decision Tree classifiers on the testing dataset
+# in order to get features importance and compare it with DeepSNPs
+
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.tree import DecisionTreeClassifier
-from sklearn.linear_model import LogisticRegression
-from sklearn.svm import SVC
 import pandas as pd
-from sklearn.metrics import f1_score, accuracy_score, auc, roc_curve
-import numpy as np
 import matplotlib.pyplot as plt
 
 training = pd.read_csv('CTCF Binding Sites/training_data_filtered.csv')
@@ -73,15 +73,15 @@ dt = DecisionTreeClassifier(random_state=1234)
 rf.fit(X_train, y_train)
 dt.fit(X_train, y_train)
 
-feat_importances = pd.Series(rf.feature_importances_, index=training.columns)
-feat_importances.nlargest(5).plot(kind='barh', color=['darkblue', 'orange', 'green', 'red', 'brown'])
+feat_importance = pd.Series(rf.feature_importances_, index=training.columns)
+feat_importance.nlargest(5).plot(kind='barh', color=['darkblue', 'orange', 'green', 'red', 'brown'])
 plt.ylabel('Features')
 plt.xlabel('Random Forest Feature Importance')
 plt.savefig('pictures/rf_feature_importance.png')
 plt.show()
 
-feat_importances = pd.Series(dt.feature_importances_, index=training.columns)
-feat_importances.nlargest(5).plot(kind='barh', color=['darkblue', 'orange', 'green', 'red', 'brown'])
+feat_importance = pd.Series(dt.feature_importances_, index=training.columns)
+feat_importance.nlargest(5).plot(kind='barh', color=['darkblue', 'orange', 'green', 'red', 'brown'])
 plt.ylabel('Features')
 plt.xlabel('Decision Tree Feature Importance')
 plt.savefig('pictures/dt_feature_importance.png')

@@ -1,3 +1,6 @@
+# Bonaventure Dossou - MSc Thesis (May 2022)
+# Get predominance (high frequencies) of chromosomes
+
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np

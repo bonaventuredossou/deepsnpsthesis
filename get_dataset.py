@@ -1,3 +1,6 @@
+# Bonaventure Dossou - MSc Thesis (May 2022)
+# Uses GWAS catalog and DisGeNET to create a subset of relevant attributes needed
+
 import pandas as pd
 
 gwas_cat = pd.read_csv('gwas_catalog_v1.0.2-associations_e105_r2022-03-08.tsv', sep='\t')

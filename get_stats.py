@@ -1,4 +1,6 @@
-from collections import Counter
+# Bonaventure Dossou - MSc Thesis (May 2022)
+# Gets stats (count, frequencies) of diseases count per variant
+
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -44,5 +46,3 @@ ax.legend()
 fig.tight_layout()
 plt.savefig('pictures/variant_freq_is_cancer_or_not.png')
 plt.show()
-
-# print(key_info)

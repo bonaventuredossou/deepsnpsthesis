@@ -1,3 +1,6 @@
+# Bonaventure Dossou - MSc Thesis (May 2022)
+# Convert the .txt binding sites files to .csv for easy manipulation
+
 import pandas as pd
 import numpy as np
 
@@ -19,7 +22,6 @@ with open(ctcf_file, encoding='utf8') as ctcf_records:
         except:
             pass
 frame = pd.DataFrame()
-
 frame['Chr_ID'] = chrs
 frame['Gene_Start'] = gene_start
 frame['Gene_End'] = gene_end

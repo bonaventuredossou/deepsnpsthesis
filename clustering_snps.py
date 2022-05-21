@@ -1,8 +1,10 @@
+# Bonaventure Dossou - MSc Thesis (May 2022)
+# Create a cluster of relations among diseases using graphs
+
 import networkx as nx
 import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
-import random
 
 dataset_ = pd.read_csv('efo_snp_category_cancer.csv')
 dataset_ = dataset_[["SNPS", "CONTEXT", "is_cancer", "DISEASE/TRAIT"]]

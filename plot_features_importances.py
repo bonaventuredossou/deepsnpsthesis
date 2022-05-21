@@ -7,7 +7,7 @@ from numpy import mean
 from numpy import std
 import pandas as pd
 
-f = open('feature_importances.json')
+f = open('features_importance_dict.json')
 data = json.load(f)
 keys = list(data.keys())
 

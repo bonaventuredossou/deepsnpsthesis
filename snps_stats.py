@@ -1,6 +1,7 @@
+# Bonaventure Dossou - MSc Thesis (May 2022)
+# Get Stats about SNPs anf their preferences to variants/diseases
+
 import pandas as pd
-import torch
-import torch.nn as nn
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -20,7 +21,6 @@ def reformat_snps(snp):
 
 initial_len = len(dataset)
 dataset = dataset.drop_duplicates(subset=["SNPS"], inplace=False)
-# len_after_duplicates = len(after_duplicate_removed)
 
 dataset['SNPS'] = dataset['SNPS'].apply(reformat_snps)
 dataset = dataset[dataset["SNPS"] != "empty"]
@@ -61,6 +61,8 @@ def get_snp_cancer_information(dataset_):
 
 
 no_cancer_, cancer_ = get_snp_cancer_information(dataset)
+
+
 def draw_stats(no_cancer_info, is_cancer_info, title, cleaned=False):
     X = np.arange(len(keys))  # the label locations
     width = 0.25  # the width of the bars
@@ -69,8 +71,8 @@ def draw_stats(no_cancer_info, is_cancer_info, title, cleaned=False):
     no_cancer_info = np.array(no_cancer_info) / sum(no_cancer_info)
     is_cancer_info = np.array(is_cancer_info) / sum(is_cancer_info)
 
-    rects1 = ax.bar(X + 0.00, no_cancer_info, width, label='no_cancer')
-    rects2 = ax.bar(X + 0.25, is_cancer_info, width, label='cancer')
+    ax.bar(X + 0.00, no_cancer_info, width, label='no_cancer')
+    ax.bar(X + 0.25, is_cancer_info, width, label='cancer')
 
     if cleaned:
         ax.set_title('Probability Count of SNPs (After Duplicates removal)')

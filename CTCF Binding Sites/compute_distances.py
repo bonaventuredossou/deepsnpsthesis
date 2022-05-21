@@ -1,8 +1,8 @@
-import networkx as nx
+# Bonaventure Dossou -  MSc Thesis (May 2022)
+# Computes the distance to the closest CTCF binding site
+
 import pandas as pd
 import matplotlib.pyplot as plt
-import matplotlib.patches as mpatches
-import random
 import numpy as np
 import json
 
@@ -37,6 +37,7 @@ dataset_["CHR_ID"] = dataset_["CHR_ID"].apply(filter_ids)
 dataset_["CHR_ID"] = dataset_[dataset_["CHR_ID"] != "empty"]["CHR_ID"]
 group_by_variant = dataset_.groupby(by='CONTEXT')
 BINDING_SITES = pd.read_csv('ctcf_binding_sites_info.csv')
+
 
 def get_min_distance(chr_information):
     chr_information = chr_information.groupby(by='SNPS')  # this is to avoid duplicates among SNPS

@@ -1,3 +1,6 @@
+# Bonaventure Dossou - MSc Thesis (May 2022)
+# Get the distributions of the variants
+
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
@@ -93,8 +96,8 @@ def get_type_disease_per_snp():
     no_cancer_info = [value[1] for key_, value in snps_dict.items()]
     is_cancer_info = [value[0] for key_, value in snps_dict.items()]
 
-    rects1 = ax.bar(X + 0.00, no_cancer_info, width, label='no_cancer')
-    rects2 = ax.bar(X + 0.25, is_cancer_info, width, label='cancer')
+    ax.bar(X + 0.00, no_cancer_info, width, label='no_cancer')
+    ax.bar(X + 0.25, is_cancer_info, width, label='cancer')
 
     plt.ylabel('frequency (non_cancer, cancer)')
     plt.xlabel('SNPs')
@@ -103,5 +106,6 @@ def get_type_disease_per_snp():
     fig.tight_layout()
     plt.savefig('pictures/disease_tupe_snp_per.png')
     plt.show()
+
 
 get_type_disease_per_snp()
