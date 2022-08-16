@@ -13,13 +13,13 @@ Using Deep Learning to classify disease-SNPs based on chromosome location or pos
 
 
 
-- Model Architecture
+- Overall Workflow Picture
 
 ![](https://github.com/bonaventuredossou/deepsnpsthesis/blob/main/pictures/model_architecture.png)
 
 
 
-[Model's weights](https://drive.google.com/file/d/1-ENOpruomCh9kE9nPuBtw-gxgwp-ayFh/view?usp=sharing)
+- Models's weights could be accessed [here](https://drive.google.com/file/d/1-ENOpruomCh9kE9nPuBtw-gxgwp-ayFh/view?usp=sharing)
 
 - Results:
     - Training Loss (Accuracy): 0.1947 (0.9016)
