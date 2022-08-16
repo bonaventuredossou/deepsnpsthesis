@@ -1,5 +1,5 @@
 Hello, I am [Bonaventure Dossou](https://bonaventuredossou.github.io/). This is the official repository of my Master's Thesis @Jacobs University
-# DeepSNPs: Deep Learning for Single Nucleotide Polymorphism Disease Classification based on Chromosome Location"
+# DeepSNPs: Deep Learning for Single Nucleotide Polymorphism Disease Classification based on Chromosome Location
 
 # Raw Datasets
   - GWAS Catalog
