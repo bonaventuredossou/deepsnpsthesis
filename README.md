@@ -7,7 +7,7 @@ Hello, this is the official repository of my Master's Thesis @Jacobs University
   - [CTCF Binding Sites](https://insulatordb.uthsc.edu)
 
 # Ready-to-go
-- [Filtered (preprocessed) dataset used for to build (train) DeepSNPs](https://drive.google.com/drive/folders/1m_1X-9Fy9SXP9jvZN0hUdXw4DmaARj_h?usp=sharing)
+- [Filtered (preprocessed) datasets used for to build (train) DeepSNPs](https://drive.google.com/drive/folders/1m_1X-9Fy9SXP9jvZN0hUdXw4DmaARj_h?usp=sharing)
 - [Official Training Notebook](https://drive.google.com/file/d/1JTClPuI-N3tDKpNdfw36vFYHR5yNQqgX/view?usp=sharing)
 
 # Deep Learning Model: Bidirectional LSTM using Keras Tensorflow
