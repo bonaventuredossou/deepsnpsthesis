@@ -1,5 +1,6 @@
-# DeepSNPs
-Using Deep Learning to classify disease-SNPs based on chromosome location or position
+Hello, this is the official repository of my Master's Thesis @Jacobs University
+
+Titled "# DeepSNPs: Deep Learning for Single Nucleotide Polymorphism Disease Classification based on Chromosome Location"
 
 # Datasets
   - GWAS Catalog
